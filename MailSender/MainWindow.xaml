@@ -6,7 +6,134 @@
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <Menu>
+            <MenuItem VerticalAlignment="Top" Header="File">
+                <MenuItem Header="Open" />
+                <MenuItem Header="Closed" />
+                <MenuItem Header="File" />
+                <Separator />
+                <MenuItem Header="File" />
+            </MenuItem>
+            <MenuItem Header="File" />
+            <MenuItem Header="File" />
+        </Menu>
+        <TabControl>
+            <TabItem Header="Panel">
+                <TabControl TabStripPlacement="Bottom">
+                    <TabItem Header="StacKPanel">
+                        <StackPanel>
+                            <Button>1</Button>
+                            <Button>2</Button>
+                            <Button>3</Button>
+                            <Button Margin="15,20,7,0">4</Button>
+                            <Button>5</Button>
+                            <Button HorizontalAlignment="left">6</Button>
+                            <Button HorizontalAlignment="center">button 7</Button>
+                            <TextBox HorizontalAlignment="Right">8</TextBox>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="text"></TextBlock>
+                                <Ellipse Fill="Blue" Stroke="Red" StrokeThickness="2" Width="60" Height="60"></Ellipse>
+                            </StackPanel>
+                            <Button HorizontalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="text"></TextBlock>
+                                    <Ellipse Fill="Blue" Stroke="Red" StrokeThickness="2" Width="60" Height="60"></Ellipse>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Grid">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="55*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Fill="DarkBlue" Stroke="Red" StrokeThickness="4" RadiusX="80" RadiusY="30" 
+                                       Margin="30,50,120,80"
+                                       Grid.ColumnSpan="2"
+                                       Grid.Row="1"/>
+                            <GridSplitter Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Width="4" HorizontalAlignment="Right" Background="Red" />
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="DockPanle">
+                        <DockPanel>
+                            <Button>Test1</Button>
+                            <Button DockPanel.Dock="Bottom">Test1</Button>
+                            <Button DockPanel.Dock="Left">Test1</Button>
+                            <TextBox  DockPanel.Dock="Right" RenderTransformOrigin="0.5,0.5">
+                                <TextBox.LayoutTransform>
+                                    <RotateTransform Angle="-90"/>
+                                </TextBox.LayoutTransform>
+                            </TextBox>
+                            <Ellipse Fill="Blue" Stroke="Red" StrokeThickness="2" Width="220" Height="200"></Ellipse>
+                        </DockPanel>
+                    </TabItem>
+                    <TabItem Header="Canvas">
+                        <Canvas >
+                            <Button Content="button" 
+                                    Canvas.Top="50"
+                                    Canvas.Left="70"/>
+                            <TextBox Text="Eingabefeld"
+                                     Canvas.Right="5"
+                                     Canvas.Bottom="1200"/>
+                        </Canvas>
+                    </TabItem>
+                    <TabItem Header="UniformGrid">
+                        <UniformGrid Columns="5" Rows="4">
+                            <Button Content="bottn"></Button>
+                            <TextBox Text="test"></TextBox>
+                            <Ellipse Fill="DarkBlue"></Ellipse>
+                            <Button Content="bottn"></Button>
+                            <TextBox Text="test"></TextBox>
+                            <Ellipse Fill="DarkBlue"></Ellipse>
+                            <Button Content="bottn"></Button>
+                            <TextBox Text="test"></TextBox>
+                            <Ellipse Fill="DarkBlue"></Ellipse>
+                            <Button Content="bottn"></Button>
+                            <TextBox Text="test"></TextBox>
+                            <Ellipse Fill="DarkBlue"></Ellipse>
+                        </UniformGrid>
+                    </TabItem>
+                    <TabItem Header="WrapPanel">
+                        <WrapPanel>
+                            <WrapPanel.Resources>
+                                <Style TargetType="Ellipse">
+                                    <Setter Property="Width" Value="50"></Setter>
+                                </Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Padding" Value="30,10"/>
+                                    <Setter Property="Margin" Value="15,5"/>
+                                </Style>
+                            </WrapPanel.Resources>
+                            <Button Content="druck mich" />
+                            <Ellipse Fill="DarkBlue"/>
+                            <Button Content="druck mich" />
+                            <Ellipse Fill="DarkBlue"/>
+                            <Button Content="druck mich" />
+                            <Ellipse Fill="DarkBlue"/>
+                            <Button Content="druck mich" />
+                        </WrapPanel>
+                    </TabItem>
+                    <TabItem Header="ViewBox">
+                        <Viewbox >
+                            <StackPanel>
+                                <Button Content="123" />
+                                <Ellipse Fill="DarkBlue"/>
+                                <Button Content="123" />
+                            </StackPanel>
+                        </Viewbox>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Liste"></TabItem>
+            <TabItem Header="Plan"></TabItem>
+            <TabItem Header="Edit"></TabItem>
+            <TabItem Header="Statistik"></TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
