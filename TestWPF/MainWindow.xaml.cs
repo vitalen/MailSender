@@ -18,8 +18,8 @@ namespace TestWPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            var from = new MailAddress("koenig.vitalij@web.de", "Vitalij");
-            var to = new MailAddress("koenig.vitalij@web.de", "Vitalij");
+            var from = new MailAddress("***", "Vitalij");
+            var to = new MailAddress("***", "Vitalij");
 
             var message = new MailMessage(from, to);
             message.Subject = "subject";
