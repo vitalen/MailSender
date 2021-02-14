@@ -7,11 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="360,352,0,0" VerticalAlignment="Top" Click="Button_Click" Height="53" Width="99"/>
-        <TextBox x:Name="LoginName" HorizontalAlignment="Left" Margin="138,301,0,0" Text="koenig.vitalij@web.de" TextWrapping="Wrap" VerticalAlignment="Top" Width="229"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="360,352,0,0" VerticalAlignment="Top" Click="Button_Click" Height="53" Width="99">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="Theme.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+
+
+        </Button>
+                <TextBox x:Name="LoginName" HorizontalAlignment="Left" Margin="138,301,0,0" Text="koenig.vitalij@web.de" TextWrapping="Wrap" VerticalAlignment="Top" Width="229"/>
         <PasswordBox x:Name="Password"  HorizontalAlignment="Left" Margin="496,301,0,0" VerticalAlignment="Top" Width="194"/>
         <TextBlock HorizontalAlignment="Left" Margin="138,280,0,0" Text="Vorname" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="566,280,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="Subject" HorizontalAlignment="Left" Margin="138,78,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Body" HorizontalAlignment="Left" Margin="138,115,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Height="121"/>
 
     </Grid>
+
+
 </Window>
