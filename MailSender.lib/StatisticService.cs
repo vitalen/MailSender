@@ -1,6 +1,6 @@
 ﻿namespace MailSender.lib
 {
-    public class DbService
+    public class StatisticService
     {
 
     }

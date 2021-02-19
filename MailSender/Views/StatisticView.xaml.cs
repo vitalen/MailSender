@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestWPF
+namespace MailSender.Views
 {
     /// <summary>
-    /// Interaktionslogik für SendEndWindow.xaml
+    /// Логика взаимодействия для StatisticView.xaml
     /// </summary>
-    public partial class SendEndWindow : Window
+    public partial class StatisticView : UserControl
     {
-        public SendEndWindow()
+        public StatisticView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿namespace MailSender.lib
 {
-    public class StaticService
+    public class MailSchedulerService
     {
-
     }
 }

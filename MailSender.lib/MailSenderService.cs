@@ -8,40 +8,39 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib
 {
+    public class MailSenderService
+    {
+        public string ServerAddress { get; set; }
 
-        public class MailSenderService
+        public int ServerPort { get; set; }
+
+        public bool UseSSL { get; set; }
+
+        public string Login { get; set; }
+        public string Password { get; set; }
+
+        public void SendMessage(string SenderAddress, string RecipientAddress, string Subject, string Body)
         {
-            public string ServerAddress { get; set; }
+            var from = new MailAddress(SenderAddress);
+            var to = new MailAddress(RecipientAddress);
 
-            public int ServerPort { get; set; }
-
-            public bool UseSSL { get; set; }
-
-            public string Login { get; set; }
-            public string Password { get; set; }
-
-            public void SendMessage(string SenderAddress, string RecipientAddress, string Subject, string Body)
+            using var message = new MailMessage(from, to)
             {
-                var from = new MailAddress(SenderAddress);
-                var to = new MailAddress(RecipientAddress);
+                Subject = Subject,
+                Body = Body
+            };
 
-                using var message = new MailMessage(from, to)
+            using var client = new SmtpClient(ServerAddress, ServerPort)
+            {
+                EnableSsl = UseSSL,
+                Credentials = new NetworkCredential
                 {
-                    Subject = Subject,
-                    Body = Body
-                };
+                    UserName = Login,
+                    Password = Password
+                }
+            };
 
-                using var client = new SmtpClient(ServerAddress, ServerPort)
-                {
-                    EnableSsl = UseSSL,
-                    Credentials = new NetworkCredential
-                    {
-                        UserName = Login,
-                        Password = Password
-                    }
-                };
-
-                client.Send(message);
-            }
-        }  
+            client.Send(message);
+        }
+    }
 }
